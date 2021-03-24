@@ -1,4 +1,4 @@
-# Banking
+# Banking System
 
 Banking system to create New Customer, Withdraw, Deposit and/or Check Balance.
 
@@ -13,7 +13,17 @@ pip install pyodbc
 ## Database table
 SQL Server ODBC connection
 TABLE - Account_Transaction
-
+--Script to create table--
+CREATE TABLE Account_Transaction (	
+	Transaction_Num int NOT NULL identity,
+	Customer_Name varchar(100) not null,
+	Pin_Num int NOT NULL,
+	Account_Type varchar(50),
+	Transaction_Type varchar(20), 	
+	Amount float,
+	Transaction_Date datetime DEFAULT GETDATE()
+	PRIMARY KEY (Transaction_Num)	
+	)
 
 ## Usage
 Create new customer account - Parameters (Pin Number, Account type, Customer Name, Amount)
